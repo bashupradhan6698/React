@@ -3,54 +3,24 @@ import ReactDOM from "react-dom/client";
 
 import "./styles.css";
 import Navbar from "./components/Navbar";
-import Project from "./components/Project";
-import Course from "./components/Course";
-import Todos from "./components/Todos";
-import Counter from "./components/Counter";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "./components/Home";
+import Users from "./components/Users";
+import Contact from "./components/Contact";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <div>
+  // <React.StrictMode>
+  <div>
+    <BrowserRouter>
       <Navbar />
-      <hr />
-
-      <Counter />
-      <hr />
-      <h1>Projects</h1>
-      <div className="projects">
-        {/*passing value in a function in javascript or ina a normal function
-      Products(title1)
-      Products(title2)
-      Products(title3)
-      */}
-        <Project
-          title="One"
-          description="desone"
-          image="https://picsum.photos/200/300"
-        />
-        {/* title and description are props rather than attribute */}
-        <Project
-          title="Two"
-          description="destwo"
-          image="https://picsum.photos/200/300"
-        />
-        <Project
-          title="Three"
-          description="desthree"
-          image="https://picsum.photos/200/300"
-        />
-      </div>
-      <hr />
-      <h1>Courses</h1>
-      <div className="courses">
-        <Course />
-        <Course />
-        <Course />
-      </div>
-
-      <hr />
-
-      <Todos />
-    </div>
-  </React.StrictMode>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/users" element={<Users />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
+    </BrowserRouter>
+    <hr />
+  </div>
+  // </React.StrictMode>
 );

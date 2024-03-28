@@ -2,7 +2,7 @@ body{
   background-color: orange;
 }
 
-ul{
+ header ul{
   display: flex;
   gap: 1rem;
   list-style-type: none;
